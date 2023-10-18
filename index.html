@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- flowbite link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <!-- font awesome icon link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>E-Commerce</title>
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- header start -->
+    <header>
+        <!-- ads discount start -->
+        <section class="top-bar-ads">
+            <p class="w-full text-white text-center text-sm">Sign up and get 20% off to your first order. <span><a
+                        href="/pages/signUp.html" class="underline text-sm">Sign Up Now</a></span></p>
+        </section>
+        <section>
+            <div id="sticky-banner" tabindex="-1"
+                class="fixed top-0 left-0 z-50 flex justify-between w-full p-2 border-b border-gray-200 bg-gray-50">
+                <div class="flex items-center mx-auto">
+                    <p class="flex items-center text-sm font-normal text-gray-500">
+                        <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full w-6 h-6 items-center justify-center">
+                            <svg class="w-3 h-3 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
+                                <path
+                                    d="M15 1.943v12.114a1 1 0 0 1-1.581.814L8 11V5l5.419-3.871A1 1 0 0 1 15 1.943ZM7 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2v5a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V4ZM4 17v-5h1v5H4ZM16 5.183v5.634a2.984 2.984 0 0 0 0-5.634Z" />
+                            </svg>
+                            <span class="sr-only">Light bulb</span>
+                        </span>
+                        <span class="text-black">Sign up and get 20% off to your first order.
+                            <a href="/pages/signUp.html"
+                                class="inline font-medium text-blue-600 underline underline-offset-2 decoration-600 decoration-solid hover:no-underline">
+                                Sign Up Now
+                            </a>
+                        </span>
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <button data-dismiss-target="#sticky-banner" type="button"
+                        class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close banner</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+        <!-- ads discount end -->
+
+        <!-- navbar start-->
+        <section class="sm:mx-0  lg:mx-[100px] mt-10 lg:mt-0">
+            <nav class="bg-white border-gray-200">
+                <div class="w-full flex flex-wrap items-center justify-between mx-auto my-4 px-4">
+                    <a href="index.html" class="flex items-center">
+                        <span class="self-center font-black text-2xl whitespace-nowrap"
+                            style="font-size: 32px;">SHOP.CO</span>
+                    </a>
+                    <div class="flex items-center md:order-2">
+                        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                            aria-expanded="false"
+                            class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search</span>
+                        </button>
+                        <div class="relative hidden md:block">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search icon</span>
+                            </div>
+                            <input type="text" id="search-navbar"
+                                class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                                placeholder="Search...">
+                        </div>
+                        <!-- cart icon -->
+                        <div class="ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                            </svg>
+                        </div>
+                        <!-- user icon -->
+                        <div class="ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <button data-collapse-toggle="navbar-search" type="button"
+                            class="inline-flex ml-2 items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-search" aria-expanded="false">
+                            <!-- hamburger icons -->
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                        id="navbar-search">
+
+                        <div class="relative mt-3 md:hidden">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="text" id="search-navbar"
+                                class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                                placeholder="Search...">
+                        </div>
+
+                        <ul
+                            class="flex flex-col p-4 md:p-0 mt-4 font-light border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+                            <li>
+                                <a href="index.html"
+                                    class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
+                                    aria-current="page">
+                                    Shop
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/onSalePage.html"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                                    On Sale
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/cartPage.html"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                                    New Arrivals
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/productDetail.html"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                                    Brands
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <!-- navbar end-->
+    </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main class="w-full h-auto">
+        <!-- banner start -->
+        <section class="bg-banner">
+            <div class="lg:mx-[100px]">
+                <div class="banner-text flex flex-col gap-5 p-8">
+                    <h1 class="text-5xl lg:mt-[150px]">FIND CLOTHES <br> THAT MATCHES <br> YOUR STYLE
+                    </h1>
+                    <p class="text-[14px] font-light text-slate-500">Browse through our diverse range of meticulously
+                        crafted.</p>
+                    <button type="button"
+                        class="text-white bg-black focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center md:w-[80%]">Shop
+                        Now</button>
+                </div>
+                <div class="banner-img">
+                    <img class="hidden md:block" src="/images/banner-img.png" alt="banner-img" width="100%"
+                        height="100%">
+                </div>
+                <div class="banner-img">
+                    <img class="pt-[350px] md:hidden" src="/images/banner-img-1.png" alt="banner-img" width="100%"
+                        height="100%">
+                </div>
+            </div>
+            <!-- brand start -->
+            <div class="w-full bg-black h-[120px]">
+                <div
+                    class="flex items-center h-full flex-wrap justify-center py-3 gap-5  md:gap-6 lg:mx-[100px] lg:justify-between">
+                    <!-- versace -->
+                    <svg class="w-[100px] h-[23px] lg:w-[150px] h-[36px]" viewBox="0 0 167 34" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M150.179 0.655656H166.482V3.25336C166.008 3.09436 165.512 3.0124 165.013 3.01061H155.642V15.1491H164.758C165.413 15.1491 165.996 15.0772 166.481 14.9548V17.5411C166.068 17.4443 165.499 17.3952 164.794 17.3952H155.642V29.9466H164.733C165.232 29.9466 165.826 29.874 166.481 29.7159V32.508H150.203C150.333 32.017 150.399 31.511 150.398 31.003V2.19691C150.398 1.56617 150.325 1.04435 150.179 0.655656ZM146.405 8.92219L141.695 8.88659C141.464 6.23976 139.947 3.67765 136.609 3.20567C129.459 2.56211 127.444 10.415 127.626 16.1572C127.809 21.6922 128.694 30.2015 136.075 30.2015C139.171 30.2015 142.144 27.0207 142.047 24.3383L146.405 24.3027C146.089 29.8377 139.741 33.0419 136.718 33.1516C126.389 33.5039 122.066 26.6206 121.848 16.7993C121.654 7.90346 125.296 0 135.504 0C144.244 0.121734 145.931 5.29294 146.405 8.92219ZM72.9408 28.8901L76.0611 26.2803C77.687 28.9635 79.0225 30.1886 82.2517 30.1886C85.5286 30.1886 88.285 28.1982 88.285 24.6786C88.285 22.9423 87.5802 21.522 86.1849 20.4542C85.5528 19.9559 83.951 19.0945 81.4259 17.8928C77.6507 16.0846 73.9731 13.7289 73.9731 8.99551C73.9731 3.02271 79.0467 0.388695 84.3995 0.193636C87.5681 0.0726133 91.5014 1.82174 93.091 3.78728L89.9231 6.22695C89.3581 5.17255 88.5181 4.29083 87.4923 3.6754C86.4665 3.05998 85.2932 2.73381 84.0969 2.73154C80.0541 2.73154 76.8498 7.41724 80.2 10.6464C81.0493 11.4715 82.7863 12.4909 85.4324 13.7047C89.6561 15.6838 93.2612 18.0501 93.2612 23.2825C93.2612 25.0908 92.7878 26.7779 91.853 28.3199C89.9722 31.4273 86.8278 32.9814 82.4339 32.9814C77.3838 32.9814 76.3892 31.8281 72.9408 28.8901ZM28.4893 0.655656H44.7782V3.25336C44.3051 3.09442 43.8094 3.01246 43.3103 3.01061H33.9396V15.1491H43.0554C43.7111 15.1491 44.2941 15.0772 44.7789 14.9548V17.5411C44.366 17.4443 43.7958 17.3952 43.1046 17.3952H33.9396V29.9466H43.0312C43.5289 29.9466 44.124 29.874 44.7789 29.7159V32.508H28.5143C28.6332 32.0151 28.6941 31.5101 28.6958 31.003V2.19691C28.6958 1.56617 28.6225 1.04435 28.4893 0.655656ZM0 0.655656H5.92368V0.947533C5.92368 1.21449 6.0084 1.56617 6.15434 2.01538L14.5049 27.1545L23.0754 1.90574C23.2085 1.48145 23.2818 1.06856 23.2818 0.655656H26.1586C25.8674 1.16537 25.6489 1.61529 25.515 2.01538L15.7308 31.2095C15.6339 31.4886 15.5492 31.9257 15.4766 32.5087H10.6208C10.5474 32.0674 10.4379 31.6329 10.2933 31.2095L0.704065 2.24603C0.482555 1.71187 0.251627 1.18166 0.0113903 0.655656H0ZM62.9145 17.262C66.7986 16.4968 69.7729 13.5232 69.7729 9.27457C69.7729 3.70186 65.1114 0.654944 59.8918 0.654944H50.3509C50.4841 1.14117 50.5574 1.65089 50.5574 2.18481V30.9774C50.5574 31.5968 50.4841 32.1186 50.3509 32.5073H56.0319C55.8929 32.0093 55.8235 31.4944 55.8254 30.9774V17.7476L57.6457 17.9419L67.1631 32.5073H72.8803L62.9145 17.262ZM61.9314 14.8345C60.8998 15.562 59.6611 15.9258 58.2409 15.9258H55.8133V2.97572H57.986C59.8441 2.97572 61.2878 3.43632 62.32 4.35822C63.7282 5.63394 64.4443 7.35744 64.4443 9.51804C64.4443 11.8488 63.6064 13.6214 61.9314 14.8352M120.901 31.1853L110.293 1.71211C110.175 1.37134 110.105 1.01572 110.086 0.655656H105.497C105.497 1.03225 105.436 1.43233 105.29 1.83313L95.0096 31.1853C94.875 31.6089 94.6572 32.0467 94.366 32.508H97.3275C97.3161 32.0225 97.3766 31.5733 97.5105 31.1853L100.556 22.5294H112.27L115.281 31.186C115.439 31.658 115.511 32.0951 115.511 32.508H121.654C121.301 32.0104 121.047 31.5612 120.901 31.1853ZM101.358 20.1865L106.31 5.80266L111.397 20.1865H101.358Z"
+                            fill="white" />
+                    </svg>
+                    <!-- zara -->
+                    <svg class="w-[50px] h-[23px] lg:w-[150px] h-[36px]" viewBox="0 0 92 38" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M86.8141 36.8682L73.3318 0.0322557L73.3226 0.00787354H73.0566L70.2802 7.57753L65.2258 21.3583L65.214 21.3474C63.4622 19.8135 60.9908 18.8546 57.8782 18.4976L56.9289 18.4003L57.8707 18.2805C63.0036 17.3652 66.454 14.1482 66.454 10.2723C66.454 4.95736 61.4165 1.24757 54.2006 1.24757H39.1869V1.51668H43.5494V28.98L32.9544 0.0321654L32.9448 0.00787354H32.6788L29.9024 7.57753L19.194 36.7734L19.1281 36.781C18.9451 36.8034 18.7641 36.8212 18.585 36.8346C18.3157 36.8556 18.0479 36.8681 17.7792 36.8681H6.95934L27.5265 1.51659L27.6794 1.25091H2.52491V12.1867H2.79182C2.83914 6.86007 5.96517 1.51659 12.8719 1.51659H21.2043L0.481689 37.133H28.399V26.6557H28.1321C28.0957 31.2985 25.4436 35.7082 19.6764 36.7039L19.493 36.7349L23.8853 24.7547H36.1892L40.6227 36.8682H36.2492V37.1331H53.415V36.8682H49.0228V18.5956H54.0908C59.2482 18.5956 62.2062 20.8821 62.2062 24.8669V28.1082C62.2062 28.4653 62.2306 28.9875 62.2577 29.4242V29.4401L59.5337 36.8665H55.9751V37.1314H63.3413V36.8665H59.821L62.3016 30.104C62.3067 30.1694 62.3093 30.2088 62.3093 30.2088L62.3777 30.8181L62.4436 31.2212C62.8575 33.7149 63.8186 35.548 65.2993 36.6695L65.5122 36.8229C66.6372 37.5991 68.0352 37.9922 69.6695 37.9922C71.8344 37.9922 73.2779 37.4566 74.4697 36.196L74.3134 36.0501C73.2153 37.0559 72.2939 37.4633 71.1393 37.4633C69.172 37.4633 68.1425 35.0954 68.1425 32.7602V28.2188C68.1529 27.092 67.9751 25.9712 67.6162 24.9021L67.5673 24.7613V24.7563H76.5668L81.0003 36.8699H76.6268V37.1347H91.4817V36.8699L86.8141 36.8682ZM23.9832 24.4898L30.0444 7.96485L36.0921 24.4898H23.9832ZM49.0255 18.3299V1.51659H52.8939C58.0615 1.51659 60.7897 4.56507 60.7897 10.3294C60.7897 16.4599 59.2236 18.3299 54.0908 18.3299H49.0255ZM67.4624 24.4898L67.4362 24.4244C67.0363 23.4578 66.454 22.5759 65.7207 21.826L65.4673 21.5745L65.4403 21.5494L70.4186 7.96485L76.4663 24.4898H67.4624Z"
+                            fill="white" />
+                    </svg>
+                    <!-- gucci -->
+                    <svg class="w-[100px] h-[23px] lg:w-[150px] h-[36px]" viewBox="0 0 157 34" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M141.794 10.2934L141.502 10.3855C140.369 8.04204 138.749 6.17651 136.644 4.78893C134.571 3.40133 131.964 2.70752 128.822 2.70752C127.073 2.70752 125.405 3.06211 123.818 3.77129C122.231 4.44972 120.838 5.42104 119.64 6.68525C118.474 7.91865 117.534 9.41416 116.822 11.1718C116.109 12.9294 115.753 14.872 115.753 16.9997C115.753 19.1273 116.109 21.0699 116.822 22.8275C117.534 24.5851 118.474 26.096 119.64 27.3603C120.838 28.5937 122.231 29.5496 123.818 30.228C125.405 30.9063 127.073 31.2455 128.822 31.2455C131.931 31.2455 134.458 30.783 136.401 29.8579C138.377 28.9021 140.045 27.4528 141.405 25.5102L141.697 25.6024L141.6 28.5626C140.855 29.3026 139.997 29.9656 139.025 30.5514C138.053 31.1065 137.001 31.5844 135.867 31.9853C134.766 32.3553 133.616 32.6328 132.418 32.8178C131.219 33.0339 130.021 33.1419 128.822 33.1419C126.328 33.1419 123.948 32.7564 121.681 31.9855C119.413 31.2146 117.421 30.1354 115.705 28.7478C113.988 27.3294 112.628 25.6335 111.624 23.66C110.62 21.6558 110.117 19.4356 110.117 16.9996C110.117 14.5636 110.62 12.3589 111.624 10.3855C112.628 8.38116 113.988 6.6698 115.705 5.25142C117.421 3.83298 119.413 2.75374 121.681 2.01369C123.948 1.24279 126.328 0.85734 128.822 0.85734C130.021 0.85734 131.219 0.949845 132.418 1.13486C133.616 1.31987 134.766 1.61281 135.867 2.01369C137.001 2.38372 138.053 2.86167 139.025 3.44757C139.997 4.0026 140.855 4.65013 141.6 5.39017L141.794 10.2934ZM34.7337 19.1277C34.3776 19.2817 34.0375 19.4822 33.7134 19.7293C33.3893 19.9758 33.2273 20.315 33.2273 20.7469V26.4359C31.6726 28.5636 29.6807 30.2133 27.2515 31.385C24.8223 32.5568 22.1339 33.1427 19.1865 33.1427C16.6925 33.1427 14.3119 32.7572 12.0447 31.9863C9.77742 31.2154 7.78547 30.1362 6.06882 28.7486C4.3522 27.3302 2.99183 25.6343 1.98774 23.6608C0.983707 21.6566 0.481689 19.4364 0.481689 17.0004C0.481689 14.5644 0.983707 12.3597 1.98774 10.3863C2.99183 8.38192 4.3522 6.67056 6.06882 5.25218C7.78547 3.83374 9.77742 2.75451 12.0447 2.01449C14.3119 1.24356 16.6925 0.858098 19.1865 0.858098C20.3849 0.858098 21.5833 0.950603 22.7818 1.13561C23.9801 1.32062 25.1299 1.61357 26.2312 2.01445C27.3648 2.38447 28.4175 2.86243 29.3891 3.44832C30.3608 4.00335 31.2192 4.65089 31.9642 5.39093L32.1588 10.2937L31.8673 10.3859C30.7337 8.04238 29.1142 6.17683 27.0089 4.78925C24.936 3.40165 22.3286 2.70784 19.1868 2.70784C17.4378 2.70784 15.7698 3.06245 14.1828 3.77165C12.5957 4.45005 11.2029 5.42136 10.0045 6.68557C8.83844 7.919 7.89917 9.41452 7.18667 11.1721C6.47405 12.9297 6.11774 14.8724 6.11774 17C6.11774 19.0968 6.45784 21.024 7.13804 22.7816C7.85063 24.5392 8.78993 26.0501 9.95594 27.3144C11.1543 28.5478 12.547 29.5191 14.1341 30.2283C15.7212 30.9067 17.4055 31.2459 19.1868 31.2459C22.5554 31.2459 25.438 30.6292 27.8348 29.3958V20.7465C27.8348 20.315 27.6568 19.9758 27.3007 19.7289C26.9766 19.4824 26.6527 19.2819 26.329 19.1273L26.3734 18.8963C26.5351 18.9245 26.8267 18.9553 27.2479 18.9885C27.6692 19.0167 28.1064 19.0475 28.5597 19.0807H32.7381C33.1268 19.0525 33.4993 19.0218 33.8556 18.9885C34.2117 18.9603 34.4869 18.9296 34.6813 18.8963L34.7337 19.1277ZM69.9237 1.82908C69.5996 1.98307 69.2757 2.18359 68.952 2.43065C68.6279 2.67714 68.4499 3.13967 68.4179 3.81822C68.3883 4.55827 68.356 5.49875 68.321 6.63967C68.321 7.74976 68.3062 9.01399 68.2766 10.4323C68.2766 11.8508 68.2618 13.3926 68.2321 15.0577V20.2381C68.2025 22.2423 67.9433 23.9537 67.4545 25.3721C66.9687 26.7905 66.3209 27.9776 65.5112 28.9335C64.7339 29.8895 63.8593 30.6449 62.8876 31.2C61.9483 31.755 61.009 32.1713 60.0697 32.4488C59.1628 32.7573 58.3045 32.9423 57.4949 33.0038C56.6851 33.0963 56.0535 33.1426 55.6 33.1426C53.7539 33.1426 51.9724 32.9113 50.2557 32.4488C48.5391 32.0173 47.033 31.3081 45.7375 30.3211C44.4419 29.3344 43.4055 28.0547 42.6281 26.4822C41.8508 24.9096 41.4621 22.9978 41.4621 20.7468V15.5203V10.7099C41.4621 9.22975 41.4473 7.90384 41.4177 6.73214C41.4177 5.52954 41.4028 4.55823 41.3732 3.81818C41.3436 3.13979 41.1656 2.67726 40.8391 2.43061C40.515 2.18411 40.1911 1.98359 39.8674 1.82904L39.9119 1.59806C40.0736 1.62626 40.3329 1.65699 40.6895 1.69025C41.0782 1.71845 41.4669 1.74918 41.8555 1.78243C42.2768 1.78243 42.6817 1.79653 43.0702 1.82473H44.8192C45.2079 1.79653 45.6127 1.78243 46.0337 1.78243C46.455 1.75423 46.8437 1.7235 47.1998 1.69025C47.5884 1.66204 47.8636 1.63132 48.0254 1.59806L48.0698 1.82904C47.7137 1.98303 47.3736 2.18355 47.0496 2.43061C46.7581 2.6771 46.596 3.13963 46.5634 3.81818C46.5338 4.55823 46.5015 5.52954 46.4666 6.73214V20.7468C46.4666 24.1078 47.2925 26.59 48.9443 28.1935C50.5962 29.7969 53.0416 30.5986 56.2806 30.5986C57.2198 30.5986 58.2887 30.4906 59.4871 30.2746C60.6856 30.0281 61.803 29.5347 62.8394 28.7945C63.9082 28.0544 64.799 27.0061 65.5115 25.6493C66.2565 24.2925 66.629 22.4887 66.629 20.2377C66.629 17.8017 66.6142 15.7204 66.5845 13.9936C66.5845 12.236 66.5697 10.7405 66.5401 9.50706C66.5401 8.24282 66.5253 7.16358 66.4957 6.26933C66.466 5.37514 66.4337 4.55801 66.3988 3.81795C66.3691 3.13955 66.1911 2.67702 65.8646 2.43037C65.5405 2.18387 65.2167 1.98334 64.893 1.82876L64.9374 1.59782C65.2935 1.65928 65.6984 1.72104 66.152 1.78311C66.6052 1.81131 67.0263 1.82541 67.4152 1.82541C67.7713 1.82541 68.1761 1.81131 68.6298 1.78311C69.1156 1.72165 69.5367 1.65989 69.893 1.59782L69.9237 1.82908ZM105.178 10.2934L104.886 10.3855C103.753 8.04204 102.133 6.17651 100.028 4.78893C97.955 3.40133 95.3476 2.70752 92.2059 2.70752C90.4569 2.70752 88.7888 3.06211 87.2017 3.77129C85.6146 4.44972 84.2219 5.42104 83.0235 6.68525C81.8575 7.91865 80.9182 9.41416 80.2056 11.1718C79.4931 12.9294 79.1368 14.8721 79.1368 16.9997C79.1368 19.1273 79.4931 21.0699 80.2056 22.8275C80.9183 24.5851 81.8576 26.096 83.0235 27.3603C84.2219 28.5937 85.6146 29.5496 87.2017 30.228C88.7888 30.9063 90.4569 31.2455 92.2059 31.2455C95.3153 31.2455 97.8417 30.783 99.785 29.8579C101.761 28.9021 103.429 27.4528 104.789 25.5102L105.081 25.6024L104.984 28.5626C104.239 29.3026 103.38 29.9656 102.409 30.5514C101.437 31.1064 100.384 31.5844 99.2508 31.9853C98.1496 32.3553 96.9998 32.6328 95.8013 32.8178C94.6029 33.0338 93.4045 33.1419 92.2062 33.1419C89.7121 33.1419 87.3315 32.7564 85.0643 31.9855C82.797 31.2146 80.8051 30.1354 79.0885 28.7478C77.3718 27.3294 76.0114 25.6335 75.0074 23.66C74.0033 21.6557 73.5013 19.4356 73.5013 16.9996C73.5013 14.5636 74.0033 12.3589 75.0074 10.3855C76.0114 8.38112 77.3718 6.66976 79.0885 5.25138C80.8051 3.83294 82.797 2.7537 85.0643 2.01365C87.3315 1.24275 89.7122 0.8573 92.2062 0.8573C93.4045 0.8573 94.6029 0.949805 95.8013 1.13482C96.9998 1.31983 98.1496 1.61277 99.2508 2.01365C100.384 2.38368 101.437 2.86163 102.409 3.44753C103.38 4.00256 104.239 4.65009 104.984 5.39013L105.178 10.2934ZM156.437 32.356C156.275 32.3278 156 32.297 155.612 32.2638C155.256 32.2638 154.867 32.2497 154.446 32.2215C154.024 32.2215 153.619 32.2074 153.231 32.1792H150.316C149.928 32.2074 149.539 32.2381 149.15 32.2714C148.794 32.2996 148.519 32.3303 148.325 32.3635L148.28 32.1782C148.604 32.0242 148.928 31.8237 149.252 31.5766C149.576 31.3302 149.754 30.8676 149.786 30.1891C149.816 29.449 149.83 28.6782 149.83 27.8764C149.86 27.0747 149.875 26.165 149.875 25.1475V21.6785V17.007V12.3355V8.82025C149.875 7.80269 149.86 6.90846 149.83 6.13756C149.83 5.33585 149.816 4.56497 149.786 3.82493C149.756 3.14653 149.578 2.68401 149.252 2.43735C148.928 2.15984 148.604 1.94407 148.28 1.79005L148.325 1.6048C148.519 1.66626 148.794 1.71251 149.15 1.74356C149.539 1.74356 149.928 1.75766 150.316 1.78586C150.737 1.81406 151.142 1.82817 151.531 1.82817H153.231C153.62 1.79996 154.025 1.78586 154.446 1.78586C154.867 1.75766 155.256 1.72693 155.612 1.69368C156 1.66548 156.275 1.63475 156.437 1.60149L156.482 1.78682C156.126 1.94081 155.786 2.15656 155.461 2.43408C155.17 2.68057 155.008 3.1431 154.975 3.82166C154.946 4.5617 154.913 5.33257 154.878 6.13429V27.8732C154.908 28.6749 154.94 29.4458 154.975 30.1858C155.005 30.8642 155.167 31.3267 155.461 31.5734C155.786 31.8199 156.126 32.0204 156.482 32.1749L156.437 32.356Z"
+                            fill="white" />
+                    </svg>
+                    <!-- prada -->
+                    <svg class="w-[100px] h-[23px] lg:w-[150px] h-[36px]" viewBox="0 0 195 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_22_367)">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.481689 0.90175L3.41386 4.20848V28.4106L1.24066 31.5774L14.5501 31.5978L12.1512 28.6839L11.9021 19.9679L24.7353 20.0375C28.6251 18.7425 32.6238 15.9815 32.8159 10.3996C32.7545 4.99032 29.452 1.52086 25.6177 0.830605L0.481689 0.90175ZM11.4265 2.44953V17.9977L21.2728 18.0689C23.5131 16.2623 25.2115 14.8787 25.1436 10.5411C25.1115 7.00433 24.3649 3.92011 21.0689 2.45029L11.4265 2.44953ZM38.9753 0.725402L41.9075 4.03289V28.2351L39.7343 31.4033L53.043 31.4222L50.6441 28.5083L50.395 19.7923H50.4483L64.1982 31.5206L75.6091 31.4275L65.1946 22.4193H56.5004L53.436 19.8089L63.2282 19.8619C67.118 18.5669 71.1159 15.8059 71.3088 10.224C71.2482 4.81548 67.9456 1.34527 64.1106 0.65577L38.9753 0.725402ZM49.9194 2.27318V17.8214L59.7657 17.8925C62.0068 16.0859 63.7044 14.7024 63.6365 10.364C63.6044 6.82798 62.8578 3.74301 59.5619 2.27318H49.9194ZM86.5949 0.690586H98.0708L113.009 28.4106C113.656 30.551 115.589 30.2869 116.88 31.2254H102.416L104.59 30.5457L104.454 28.4818L100.719 22.5011L88.0208 22.5722L85.3049 28.3418C85.2143 28.998 84.5123 29.496 85.0331 30.3111L86.0522 31.2958L79.805 31.155L82.5217 30.3111L92.7741 8.71181V7.23365L88.4423 1.45502L86.5949 0.690586ZM88.8236 20.5976L94.0977 10.6123L99.5888 20.5416L88.8236 20.5976ZM164.197 0.751135H175.672L190.611 28.4712C191.257 30.6116 193.191 30.3475 194.482 31.286H180.017L182.191 30.6048L182.055 28.5408L178.32 22.5616L165.622 22.6328L162.906 28.4008C162.815 29.0585 162.114 29.5565 162.634 30.3717L163.653 31.3563L157.407 31.2156L160.123 30.3717L170.376 8.77235V7.29345L166.044 1.51557L164.197 0.751135ZM166.425 20.6589L171.699 10.6736L177.191 20.6013L166.425 20.6589ZM120.849 0.402222L141.292 0.514994C147.875 2.05672 152.064 6.07868 153.363 13.0948L153.308 18.5669C152.108 24.8186 148.175 29.1319 141.238 31.3155L120.74 31.373L120.737 30.7107C123.853 30.4754 124.102 30.1196 124.11 28.2699V3.33506C124.075 1.96741 123.802 1.11594 120.794 1.02209L120.849 0.402222ZM132.469 2.53581L132.45 29.5134C135.146 29.5225 137.485 29.7753 138.806 29.1009C141.801 27.7333 143.191 25.633 143.319 23.6598L143.247 7.73016C143.248 5.1818 140.482 3.38274 138.885 2.91425C137.743 2.49116 135.465 2.47375 132.469 2.53581Z"
+                                fill="white" stroke="white" stroke-width="1.02419" stroke-miterlimit="2.613" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_22_367">
+                                <rect width="194" height="32" fill="white" transform="translate(0.481689)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <!-- calvin klein-->
+                    <svg class="w-[100px] h-[23px] ml-5 lg:w-[150px] h-[36px] " viewBox="0 0 135 23" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.0116 20.6763C6.29133 20.6763 2.26229 16.395 2.26229 11.7252C2.26229 7.07275 6.20701 2.70639 10.9777 2.70639C14.1137 2.70639 16.3719 4.22359 18.2098 6.60065H20.5191C19.8279 5.35302 19.0862 4.20701 17.9568 3.31327C16.018 1.74562 13.5061 0.818726 11.0116 0.818726C5.02712 0.818726 0.155518 5.75808 0.155518 11.7087C0.155518 17.6758 5.09488 22.5647 11.0455 22.5647C13.473 22.5647 15.85 21.6717 17.755 20.1711C18.9522 19.2103 19.7947 17.9627 20.6042 16.6812H18.2948C16.4735 19.0582 14.1476 20.6763 11.0116 20.6763ZM34.9494 9.29773C33.5 7.42664 31.5272 6.24675 29.0832 6.24675C24.7002 6.24675 21.0928 9.80442 21.0928 14.1874C21.0928 18.5696 24.7175 22.1604 29.0832 22.1604C31.6289 22.1604 33.3983 21.098 34.9494 19.1426V21.8058H36.8544V6.61722H34.9494V9.29773ZM28.9823 20.4068C25.6271 20.4068 22.9805 17.4906 22.9805 14.2039C22.9805 10.9331 25.6105 8.00036 28.9823 8.00036C32.3367 8.00036 34.9494 10.9338 34.9494 14.2039C34.9494 17.4906 32.3194 20.4068 28.9823 20.4068ZM39.1637 21.8058H41.2041V1.25623H39.1637V21.8058ZM48.9076 19.3948L43.7491 6.61722H41.726L47.913 21.8058H49.9693L56.1397 6.61722H54.1504L48.9076 19.3948ZM56.9823 21.8058H59.022V6.61722H56.9823V21.8058ZM56.9823 4.66181H59.022V1.25623H56.9823V4.66181ZM67.8052 6.24603C65.8829 6.24603 64.5178 7.25798 63.2536 8.60652V6.61722H61.3652V21.8058H63.3711V12.5505C63.3545 10.1064 65.3769 7.99964 67.8383 7.99964C70.9225 7.99964 72.4735 10.6801 72.4735 13.445V21.8065H74.3612V13.445C74.3619 9.50026 72.0533 6.24603 67.8052 6.24603ZM93.2934 1.25623L84.0215 13.0399V1.25623H82.0157V21.8058H84.0215V16.1586L86.6516 12.8885L93.3438 21.8058H95.8902L87.9324 11.2697L95.8902 1.25623H93.2934ZM96.6312 21.8058H98.6212V1.25623H96.6312V21.8058ZM115.091 10.4437C113.708 7.86414 110.943 6.24603 108.026 6.24603C103.678 6.24603 100.002 9.87073 100.002 14.2198C100.002 18.602 103.711 22.1597 108.062 22.1597C110.134 22.1597 112.175 21.3337 113.674 19.9008C114.585 19.0409 115.124 17.962 115.612 16.8325H113.472C112.393 18.94 110.488 20.4061 108.026 20.4061C106.526 20.4061 105.06 19.7992 103.948 18.7706C102.8 17.7263 102.295 16.444 102.075 14.9276H116.085C116.086 13.3433 115.866 11.8261 115.091 10.4437ZM102.144 13.1747C102.752 10.3262 104.993 7.99964 108.062 7.99964C110.641 7.99964 113.405 9.58459 114.012 13.1747H102.144ZM117.569 21.8058H119.574V6.61722H117.569V21.8058ZM117.569 4.72956H119.574V1.25623H117.569V4.72956ZM128.392 6.24603C126.435 6.24603 125.07 7.25798 123.789 8.60652V6.61722H121.867V21.8058H123.89V12.5505C123.874 10.0898 125.947 7.99964 128.425 7.99964C131.494 7.99964 133.112 10.6801 133.112 13.445V21.8065H135V13.445C135 9.50026 132.656 6.24603 128.392 6.24603Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+            <!-- brand start -->
+        </section>
+        <!-- banner end -->
+
+        <!-- New Arrival start -->
+        <section class="w-full pt-16 ">
+            <p class="uppercase font-extrabold text-center text-5xl">new arrivals</p>
+            <!-- product -->
+            <div class="flex flex-row mx-3 overflow-x-auto gap-5 mt-8 lg:justify-evenly">
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-1.png" alt="product image"
+                            height="290px" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                t-shirt with tape details</h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-1.png" alt="product image" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                shirt with wrap details</h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-3.png" alt="product image"
+                            width="900px" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                checkered shirt
+                            </h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-4.png" alt="product image"
+                            width="900px" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                sleeve striped t-shirt</h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <<div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- button view more -->
+            <div class="text-center mt-8">
+                <button type="button"
+                    class="text-gray-900 bg-transparent border border-gray-300 focus:outline-none hover:bg-white focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-16 py-2.5">
+                    View All
+                </button>
+            </div>
+            <!-- horizontal hr -->
+            <hr class="my-16 lg:mx-[100px] ">
+        </section>
+        <!-- New Arrival end -->
+
+        <!-- top selling start -->
+        <section class="w-full">
+            <p class="uppercase font-extrabold text-center text-5xl">top selling</p>
+            <!-- product -->
+            <div class="flex flex-row mx-3 overflow-x-auto gap-5 mt-8 lg:justify-evenly">
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-5.png" alt="product image"
+                            height="290px" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                t-shirt with tape details</h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-6.png" alt="product image" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                shirt with wrap details</h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-7.png" alt="product image"
+                            width="900px" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                checkered shirt
+                            </h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-[320px] h-[480px] max-w-sm bg-white border border-gray-200 rounded-xl shadow flex flex-shrink-0 flex-col">
+                    <a href="/pages/productDetail.html">
+                        <img class="p-8 overflow-hidden" src="/images/product-8.png" alt="product image"
+                            width="900px" />
+                    </a>
+                    <div class="px-8">
+                        <a href="/pages/productDetail.html">
+                            <h5 class="text-xl font-semibold tracking-tight text-gray-900 capitalize">
+                                sleeve striped t-shirt</h5>
+                        </a>
+                        <div class="flex items-center mt-2.5 mb-2.5">
+                            <div class="text-[#fde046]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded  ml-3">
+                                4.0
+                            </span>
+                        </div>
+                        <div class="flex gap-3">
+                            <p class="font-bold text-[24px]">$26</p>
+                            <p class="font-bold text-[24px] line-through text-gray-400">$36</p>
+                            <p class="text-red-500 bg-opacity-60 font-medium text-md py-2 text-center">20% off</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- button view more -->
+            <div class="text-center mt-8">
+                <button type="button"
+                    class="text-gray-900 bg-transparent border border-gray-300 focus:outline-none hover:bg-white focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-16 py-2.5">
+                    View All
+                </button>
+            </div>
+            <!-- horizontal hr -->
+            <hr class="my-16 lg:mx-[100px] ">
+        </section>
+        <!-- top selling end -->
+
+        <!-- dress style start-->
+        <section class="dress-style mx-3 rounded-xl lg:mx-[75px]">
+            <p class="uppercase font-extrabold text-center text-5xl pt-16 pb-8">browser by dress style</p>
+            <div class="grid p-7 gap-5 lg:grid-cols-3 p-12 overflow-hidden">
+                <div class="lg:col-span-1">
+                    <img class="rounded-lg" src="/images/style-2.png" alt="">
+                </div>
+                <div class="lg:col-span-2 lg:h-[317px] overflow-hidden">
+                    <img class="rounded-lg " src="/images/style-3.png" alt="">
+                </div>
+                <div class="lg:col-span-2 lg:h-[380px] overflow-hidden">
+                    <img class="rounded-lg" src="/images/style-3.png" alt="" class="overflow-hidden">
+                </div>
+                <div class="lg:col-span-1">
+                    <img class="rounded-lg" src="/images/style-1.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- dress style end-->
+        <!-- newsletter start -->
+        <section class="w-full mt-10">
+            <div class="p-3 w-full lg:px-[75px]">
+                <div
+                    class="flex flex-col p-9 bg-black rounded-[20px] justify-between w-full h-full lg:flex-row justify-between">
+                    <div class=" text-white text-[32px] font-bold leading-10">STAY UPTO DATE ABOUT OUR LATEST OFFERS
+                    </div>
+                    <div class="flex-col justify-start items-start w-full lg:w-[500px] ">
+                        <div class="px-4 py-3 bg-white rounded-[62px] justify-start items-start my-6">
+                            <div class="text-black text-opacity-40 text-base font-normal ">Enter your email address
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 bg-white rounded-[62px] flex justify-center items-center">
+                            <div class="text-black text-base font-medium">Subscribe to Newsletter</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto  lg:mt-16 lg:mx-[75px]" />
+        </section>
+    </main>
+    <!-- main end -->
+
+    <!-- footer start -->
+
+    <footer class="w-full h-auto footer-bg">
+        <div class="mx-auto w-full p-4 py-6 lg:py-8 lg:px-[75px]">
+            <div class="lg:flex justify-between">
+                <div class="mt-[16px] mb-[32px]">
+                    <a href="index.html" class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <span class="self-center font-black text-2xl whitespace-nowrap"
+                                style="font-size: 32px;">SHOP.CO</span>
+                        </a>
+                    </a>
+                    <p class="text-[14px] font-light text-slate-500 my-3">We have clothes that suits your style and
+                        which you're proud to wear. From women to men.</p>
+                    <div class="text-[24px] flex gap-3">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-square-github"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-8 gap-6 sm:grid-cols-2 md:grid-cols-4">
+                    <div>
+                        <h2 class="mb-4 text-base text-gray-900 uppercase">Company</h2>
+                        <ul class="text-slate-500 font-light">
+                            <li class="mb-2">
+                                <a href="/index.html" class="hover:underline">About</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/index.html" class="hover:underline">Feature</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/index.html" class="hover:underline">Works</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/index.html" class="hover:underline">Career</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-4 text-base text-gray-900 uppercase">Help</h2>
+                        <ul class="text-slate-500 font-light">
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Customer Support</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Delivery Details</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Terms & Conditions</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-4 text-base text-gray-900 uppercase">FAQ</h2>
+                        <ul class="text-slate-500 font-light">
+                            <li class="mb-2">
+                                <a href="https://flowbite.com/" class="hover:underline">Account</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Manage Deliveries</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Orders</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Payment</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-4 text-base text-gray-900 uppercase">Resources</h2>
+                        <ul class="text-slate-500 font-light">
+                            <li class="mb-2">
+                                <a href="https://flowbite.com/" class="hover:underline">Free eBook</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Development Tutorial</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">How to - Blog</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="index.html" class="hover:underline">Youtube Playlist</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8" />
+            <div class="text-center">
+                <span class="text-sm text-gray-500 sm:text-center ">© 2023 <a href="https://flowbite.com/"
+                        class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer end -->
+
+    <!-- flowbite script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+</body>
+
+</html>
